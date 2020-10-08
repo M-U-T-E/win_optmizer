@@ -1,22 +1,28 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
 #include "ahrb.h"
 #include "mute.h"
 using namespace std;
-int main(int argc, char const *argv[])
+int main()
 {
-    system("cls");
     system("color 09");
+    string TEMP;
     for (;;)
     {
         UI_page_1();
+        
         if (key_controller() == 1)
         {
-            system("cls");
-            break;
+            cout<<"Clean Temp file\n";
+            RemoveFolder(TempFind());
+        }
+        else if(key_controller()==(char)27)
+        {
+            cout<<"ESC\n";
+            exit(EXIT_SUCCESS);
         }
     }
     
-    _getch();
     return 0;
 }

@@ -10,7 +10,7 @@ int key_controller()
     switch (_getch())
     {
     case 49:
-        cout << 1;
+        
         system("color 02");
         Sleep(400);
         system("color 09");
